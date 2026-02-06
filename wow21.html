@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMIN JUMAEV | Senior Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --bg: #030303; --accent: #ff2d2d; }
+        body { background-color: var(--bg); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        
+        /* High-Motion Background */
+        .ambient-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; pointer-events: none; overflow: hidden;
+        }
+        .orb {
+            position: absolute; border-radius: 50%;
+            filter: blur(80px);
+            mix-blend-mode: screen;
+            opacity: 0.4;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 32px;
+            transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
+        }
+        .glass-card:hover {
+            border-color: var(--accent);
+            background: rgba(255, 45, 45, 0.06);
+            transform: translateY(-8px);
+        }
+
+        .hero-title { 
+            font-size: clamp(3.5rem, 12vw, 9rem); 
+            line-height: 0.85; 
+            letter-spacing: -0.05em; 
+            font-weight: 800; 
+            display: inline-block;
+        }
+
+        /* Timeline path animation */
+        .timeline-line { 
+            position: absolute; left: 50%; width: 1px; height: 100%; 
+            background: linear-gradient(to bottom, transparent, rgba(255,45,45,0.5), transparent); 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-bg" id="ambient-container">
+        <div class="orb w-[600px] h-[600px] bg-red-600/30" id="orb1"></div>
+        <div class="orb w-[500px] h-[500px] bg-red-900/40" id="orb2"></div>
+        <div class="orb w-[400px] h-[400px] bg-zinc-800" id="orb3"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-[100] px-8 py-8 flex justify-between items-center bg-transparent">
+        <div class="text-2xl font-extrabold tracking-tighter">AJ<span class="text-red-600">.</span></div>
+        <div class="flex gap-8 items-center text-[10px] uppercase tracking-[0.3em] font-bold">
+            <a href="#timeline" class="hover:text-red-500 transition-colors">Timeline</a>
+            <a href="#contact" class="px-6 py-3 bg-red-600 text-white rounded-full hover:bg-white hover:text-black transition-all">Connect</a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-8 pt-20">
+        <div class="reveal">
+            <p class="text-red-500 uppercase tracking-[0.6em] text-[10px] font-black mb-8">Engineering Mastery since 2022</p>
+            <h1 class="hero-title italic mb-12">AMIN JUMAEV</h1>
+            <p class="max-w-3xl text-gray-400 text-xl md:text-2xl font-light leading-relaxed mx-auto">
+                Senior Python Architect with <span class="text-white font-bold">4 years of focused expertise</span>. 
+                Integrating a global perspective shaped by 20+ countries and international volunteering.
+            </p>
+            <div class="mt-16 animate-bounce opacity-20">
+                <i data-lucide="chevron-down" class="mx-auto"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="py-32 px-8 md:px-20 max-w-5xl mx-auto">
+        <h2 class="text-xs uppercase tracking-[0.8em] text-gray-500 mb-20 text-center">Development Journey</h2>
+        
+        <div class="relative">
+            <div class="timeline-line hidden md:block"></div>
+
+            <div class="flex flex-col md:flex-row items-center mb-24 relative">
+                <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                    <h3 class="text-4xl font-extrabold text-white">2022</h3>
+                    <p class="text-red-500 font-bold uppercase tracking-widest text-[10px]">Foundation</p>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <div class="glass-card p-8">
+                        <h4 class="text-xl font-bold mb-2">Python Architecture</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">4 Years of deep backend development. Evolved from automation scripts to high-performance microservices and API ecosystems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row-reverse items-center mb-24 relative">
+                <div class="md:w-1/2 md:pl-12 text-left mb-6 md:mb-0">
+                    <h3 class="text-4xl font-extrabold text-white">2024</h3>
+                    <p class="text-red-500 font-bold uppercase tracking-widest text-[10px]">Leadership</p>
+                </div>
+                <div class="md:w-1/2 md:pr-12 md:text-right">
+                    <div class="glass-card p-8">
+                        <h4 class="text-xl font-bold mb-2">International Volunteering</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Leadership roles within international organizations in Tajikistan. Honed linguistic mastery and cross-border collaboration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center mb-10 relative">
+                <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                    <h3 class="text-4xl font-extrabold text-white">2025</h3>
+                    <p class="text-red-500 font-bold uppercase tracking-widest text-[10px]">Expansion</p>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <div class="glass-card p-8">
+                        <h4 class="text-xl font-bold mb-2">Java & Creative Stack</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Integrated Java, Web technologies, and Graphic Design (1-2 years) to master the full-spectrum user experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-40 px-8 text-center bg-zinc-950/50 border-t border-white/5">
+        <h2 class="hero-title italic mb-20">CONTACT<span class="text-red-600">.</span></h2>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a href="https://t.me/amkinyc" target="_blank" class="glass-card px-12 py-12 hover:bg-red-600 transition-all duration-500 group">
+                <i data-lucide="send" class="w-8 h-8 mx-auto mb-4 group-hover:text-white"></i>
+                <p class="text-[11px] font-bold tracking-[0.4em] uppercase">Telegram</p>
+            </a>
+            <a href="mailto:mukimcodes@gmail.com" class="glass-card px-12 py-12 hover:bg-red-600 transition-all duration-500 group">
+                <i data-lucide="mail" class="w-8 h-8 mx-auto mb-4 group-hover:text-white"></i>
+                <p class="text-[11px] font-bold tracking-[0.4em] uppercase">Gmail</p>
+            </a>
+            <a href="tel:+992935526677" class="glass-card px-12 py-12 hover:bg-red-600 transition-all duration-500 group">
+                <i data-lucide="phone" class="w-8 h-8 mx-auto mb-4 group-hover:text-white"></i>
+                <p class="text-[11px] font-bold tracking-[0.4em] uppercase">Call</p>
+            </a>
+        </div>
+        <p class="mt-40 text-[9px] text-gray-700 tracking-[1em] uppercase">Amin Jumaev • Senior Architect • 2026</p>
+    </section>
+
+    <script>
+        lucide.createIcons();
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Advanced Background Animation
+        const orbs = ['#orb1', '#orb2', '#orb3'];
+        
+        orbs.forEach((orb, i) => {
+            gsap.to(orb, {
+                x: () => Math.random() * window.innerWidth,
+                y: () => Math.random() * window.innerHeight,
+                duration: 10 + (i * 5),
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+        });
+
+        // Mouse Follow Effect for Background
+        window.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const x = (clientX / window.innerWidth - 0.5) * 100;
+            const y = (clientY / window.innerHeight - 0.5) * 100;
+            
+            gsap.to('.orb', {
+                xPercent: x,
+                yPercent: y,
+                duration: 2,
+                stagger: 0.1,
+                ease: "power2.out"
+            });
+        });
+
+        // Centered Reveal
+        gsap.from(".reveal", { opacity: 0, y: 100, duration: 2, ease: "expo.out" });
+        
+        gsap.utils.toArray('.glass-card').forEach(card => {
+            gsap.from(card, {
+                scrollTrigger: { trigger: card, start: "top 95%" },
+                opacity: 0, y: 50, duration: 1.2, ease: "power4.out"
+            });
+        });
+    </script>
+</body>
+</html>
